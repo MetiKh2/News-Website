@@ -1,0 +1,12 @@
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\bin\Debug\net5.0\MyCms.Domain.deps.json
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\bin\Debug\net5.0\MyCms.Domain.dll
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\bin\Debug\net5.0\ref\MyCms.Domain.dll
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\bin\Debug\net5.0\MyCms.Domain.pdb
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.AssemblyInfoInputs.cache
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.AssemblyInfo.cs
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.csproj.CoreCompileInputs.cache
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.dll
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\ref\MyCms.Domain.dll
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.pdb
+D:\پروژه سایت خبری (First Project In Asp.Net Core)\MyCms\MyCms.Domain\obj\Debug\net5.0\MyCms.Domain.csprojAssemblyReference.cache

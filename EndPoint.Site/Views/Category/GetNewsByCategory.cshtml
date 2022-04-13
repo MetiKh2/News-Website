@@ -1,0 +1,105 @@
+﻿@model EndPoint.Site.Models.ViewModels.CategoryViewModel.CategoryViewModel
+@{
+    ViewData["Title"] = "GetNewsByCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/SiteTemplate/css/bootstrap.css">
+    <link rel="stylesheet" href="~/SiteTemplate/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/SiteTemplate/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/SiteTemplate/css/owl.theme.default.css">
+    <link rel="stylesheet" href="~/SiteTemplate/style.css">
+</head>
+<body>
+   
+    <div class="latest-posts">
+        <div class="container-fluid">
+            <div class="col-md-9">
+                <div class="blog-title-span">
+                    <span class="title">اخبار و مقالات</span>
+                </div>
+                @foreach (var item in Model.News)
+                {
+                    <div class="col-md-4">
+                        <div class="post-box">
+                            <a href="~/news/Detail/@item.NewsID">
+                                <figure>
+                                    <img src="~/@item.Src" alt="">
+                                    <figcaption class="meta-fig">
+                                        <span><i class="fa fa-clock-o"></i> 99/3/20</span>&nbsp;
+                                        <span><i class="fa fa-comment-o"></i> 12</span>
+                                    </figcaption>
+                                    <figcaption class="view">
+                                        <span>@item.Category</span>
+                                     
+                                    </figcaption>
+                                </figure>
+                                <div class="text-p">
+                                    <h5>@item.Title</h5>
+                                    <p>
+                                      @item.ShortDescription
+                                    </p>
+                                    <div class="text-rigt">
+                                        <a href="~/news/Detail/@item.NewsID">ادامه ...</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <div class="col-md-3 main-content">
+                <div class="l-sidebar">
+                    <div class="cat-sidebar">
+                        <span class="title">دسته بندی مطالب</span>
+                        <div class="text-left"><i class="fa fa-folder-o"></i></div>
+                        <ul>
+
+                            @foreach (var item in Model.Categories)
+                            {
+                                <li><a href="~/category/getnewsbycategory/@item.ID">@item.Name</a><span>@item.NewsCount</span></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="l-sidebar">
+                    <div class="cat-sidebar report">
+                        <span class="title">گزارش</span>
+                        <div class="text-left"><i class="fa fa-arrows-alt"></i></div>
+                        <ul>
+
+                            @foreach (var item in Model.instantNews)
+                            {
+                                <li><a href="~/news/detail/@item.ID">@item.Title</a></li>
+
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">قبلی</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">بعدی</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+   
+    <div class="bg"></div>
+    <script src="~/SiteTemplate/js/jquery.js"></script>
+    <script src="~/SiteTemplate/js/bootstrap.js"></script>
+    <script src="~/SiteTemplate/js/owl.carousel.min.js"></script>
+    <script src="~/SiteTemplate/js/index.js"></script>
+</body>
+</html> 

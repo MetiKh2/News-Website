@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ydwiFVQpJ0vAag/o7MZIT4bPMtvlk1msktdFDVIh6jWZKuuhu56a9uE16/5/COlkTTAN55Cit5cjWK1p8/d5Cg==",
+  "success": true,
+  "projectFilePath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mahdi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
+    "C:\\Users\\mahdi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.5\\microsoft.aspnetcore.cryptography.keyderivation.5.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

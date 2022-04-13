@@ -1,0 +1,352 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\EndPoint.Site\\EndPoint.Site.csproj": {}
+  },
+  "projects": {
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\EndPoint.Site\\EndPoint.Site.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\EndPoint.Site\\EndPoint.Site.csproj",
+        "projectName": "EndPoint.Site",
+        "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\EndPoint.Site\\EndPoint.Site.csproj",
+        "packagesPath": "C:\\Users\\mahdi\\.nuget\\packages\\",
+        "outputPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\EndPoint.Site\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mahdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\MyCms.Persistence.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\MyCms.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\MyCms.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\MyCms.Application.csproj",
+        "projectName": "MyCms.Application",
+        "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\MyCms.Application.csproj",
+        "packagesPath": "C:\\Users\\mahdi\\.nuget\\packages\\",
+        "outputPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mahdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj"
+              },
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj",
+        "projectName": "MyCms.Common",
+        "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj",
+        "packagesPath": "C:\\Users\\mahdi\\.nuget\\packages\\",
+        "outputPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mahdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj",
+        "projectName": "MyCms.Domain",
+        "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj",
+        "packagesPath": "C:\\Users\\mahdi\\.nuget\\packages\\",
+        "outputPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mahdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\MyCms.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\MyCms.Persistence.csproj",
+        "projectName": "MyCms.Persistence",
+        "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\MyCms.Persistence.csproj",
+        "packagesPath": "C:\\Users\\mahdi\\.nuget\\packages\\",
+        "outputPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mahdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\MyCms.Application.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Application\\MyCms.Application.csproj"
+              },
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Common\\MyCms.Common.csproj"
+              },
+              "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj": {
+                "projectPath": "D:\\پروژه سایت خبری (First Project In Asp.Net Core)\\MyCms\\MyCms.Domain\\MyCms.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

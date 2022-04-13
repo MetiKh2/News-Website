@@ -1,0 +1,383 @@
+﻿@using EndPoint.Site.Models.ViewModels.HomePageViewModel;
+@model HomePageViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="top-sidebar-r">
+                <span class="title">عکس</span>
+                <a href="#">
+                    <div class="bx">
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/696112501123546.jpg" alt="">
+                                    <figcaption><span>1</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="meta">
+                                <h5>
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و...</h6>
+                                    <span><i class="fa fa-clock-o"></i> 99/3/20</span>
+                                    <div class="text-left">
+                                        <sub><i class="fa fa-comment"></i> 26</sub>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="bx">
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/1733753707Capture.png" alt="">
+                                    <figcaption><span>2</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="meta">
+                                <h5>
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و... متن ارسال شده</h6>
+                                    <span><i class="fa fa-clock-o"></i> 99/3/20</span>
+                                    <div class="text-left">
+                                        <sub><i class="fa fa-comment"></i> 26</sub>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="bx">
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/290667058azer news.jpg" alt="">
+                                    <figcaption><span>3</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="meta">
+                                <h5>
+                                    عنوان برایلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                                    از طراحان گرافیک است. چاپگرها و... شده</h6>
+                                    <span><i class="fa fa-clock-o"></i> 99/3/20</span>
+                                    <div class="text-left">
+                                        <sub><i class="fa fa-comment"></i> 26</sub>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="bx">
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/parsitarh-1038x515.png" alt="">
+                                    <figcaption><span>4</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="meta">
+                                <h5>
+                                    عنوان برای متن ارسال شده</h6>
+                                    <span><i class="fa fa-clock-o"></i> 99/3/20</span>
+                                    <div class="text-left">
+                                        <sub><i class="fa fa-comment"></i> 246</sub>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="main-slider-box">
+                <div class="owl-carousel owl-theme main-slider">
+
+                    @foreach (var item in Model.ShowSlider)
+                    {
+                        <div class="item">
+                            <a href="~/news/detail/@item.ID">
+                            <figure>
+                                <img src="~/@item.Src" alt="">
+                                <figcaption class="gradient-fig"></figcaption>
+                                <figcaption class="desc-fig">
+                                    <span><i class="fa fa-heart"></i> 56</span>
+                                    <h3>@item.Title</h3>
+                                    <span><i class="fa fa-clock-o"></i> @item.CreateDate</span>
+                                    <p>
+                                      @item.ShortDescription
+                                    </p>
+                                </figcaption>
+                            </figure>
+                                </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="top-sidebar-l">
+                <span class="title">اخبار محبوب</span>
+                @foreach (var item in Model.PopularNews.Take(4))
+                {
+                    <a href="~/news/detail/@item.ID">
+                        <div class="bx">
+                            <div class="col-md-3 nopadding">
+                                <span><i class="fa fa-heart"></i> @item.NewsLike</span>
+                            </div>
+                            <div class="col-md-8 nopadding">
+                                <h3>
+                                    @item.Ttitle
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="r-sidebar">
+                    <div class="special-posts">
+                        <span class="title">گفتگو</span><br>
+                        <div class="special-box">
+                            <a href="#">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/1397022612335447514155694.jpg" alt="">
+                                    <figcaption class="txt">
+                                        <h4>عنوان مطلب ارسالی</h4>
+                                        <span><i class="fa fa-calendar-o"></i> 99/3/20</span>
+                                        <span><i class="fa fa-comment-o"></i> 98</span>
+                                    </figcaption>
+                                    <figcaption class="link"><i class="fa fa-external-link"></i></figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="special-box">
+                            <a href="#">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/unnamed.jpg" alt="">
+                                    <figcaption class="txt">
+                                        <h4>که لازم است و برای شرایط فعلی تکنولوژی مور</h4>
+                                        <span><i class="fa fa-calendar-o"></i> 99/3/20</span>
+                                        <span><i class="fa fa-comment-o"></i> 98</span>
+                                    </figcaption>
+                                    <figcaption class="link"><i class="fa fa-external-link"></i></figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="special-box">
+                            <a href="#">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/696112501123546.jpg" alt="">
+                                    <figcaption class="txt">
+                                        <h4>لازمه توجه به نشریات در اینترنت</h4>
+                                        <span><i class="fa fa-calendar-o"></i> 99/3/20</span>
+                                        <span><i class="fa fa-comment-o"></i> 98</span>
+                                    </figcaption>
+                                    <figcaption class="link"><i class="fa fa-external-link"></i></figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="special-box">
+                            <a href="#">
+                                <figure>
+                                    <img src="~/SiteTemplate/img/parsitarh-1038x515.png" alt="">
+                                    <figcaption class="txt">
+                                        <h4>
+                                            یک عنوان برای این بخش نظر بگیرید ، این عنوا اگر بسیار بلند هم باشد توسط
+                                            خود قالب بهینه خواهد شد
+                                        </h4>
+                                        <span><i class="fa fa-calendar-o"></i> 99/3/20</span>
+                                        <span><i class="fa fa-comment-o"></i> 98</span>
+                                    </figcaption>
+                                    <figcaption class="link"><i class="fa fa-external-link"></i></figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ads-box">
+                        <span class="title">تبلیغات</span><br>
+                        <figure>
+                            <img src="~/SiteTemplate/img/unnamed.jpg" alt="">
+                        </figure>
+                        <figure>
+                            <img src="~/SiteTemplate/img/696112501123546.jpg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content-wrapper">
+                    <div class="most-views">
+                        <span class="title">مطالب پربازدید</span>
+                        <div class="col-md-8">
+                            <div class="main-post">
+                                <a href="~/news/detail/@Model.OneTopNews.NewsID">
+                                    <figure>
+                                        <img src="~/@Model.OneTopNews.Src" alt="">
+                                        <figcaption>
+                                            <span><i class="fa fa-folder-o"></i> خبر روز</span>
+                                            <h3>@Model.OneTopNews.Title</h3>
+                                            <span><i class="fa fa-comments-o"></i> </span>
+                                        </figcaption>
+                                    </figure>
+                                    </a>
+                                    <div class="p-div">
+                                        <p>
+                                            @Model.OneTopNews.ShortDescription
+                                        </p>
+                                    </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="oth-posts">
+                                @foreach (var item in Model.TopNews.Take(3))
+                                {
+                                    <div class="r-box">
+                                        <span class="cat-span">@item.Category</span>
+                                        <span class="cat-span">#خبر</span>
+                                        <a href="~/news/detail/@item.NewsID">
+                                            <h5>@item.Title</h5>
+                                        </a>
+                                        <span><i class="fa fa-clock-o"></i> @item.CreateDate </span>
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-cat-box">
+                        <span class="title"> اخبار روز </span>
+                        <div class="col-md-6">
+                            @foreach (var item in Model.NewsOfDay.Take(2))
+                            {
+                                <div class="main-post">
+                                    <a href="~/news/detail/@item.ID">
+                                        <figure>
+                                            <img src="~/@item.Src" alt="">
+                                            <figcaption>
+                                                <span><i class="fa fa-folder-o"></i> @item.Category</span>
+                                                <h3>@item.Title</h3>
+                                                <span><i class="fa fa-comments-o"></i> 65</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            }
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="left-content">
+                                @foreach (var item in Model.NewsOfDay.Skip(2).Take(4))
+                                {
+                                    <div class="col-md-6">
+                                        <a href="~/news/detail/@item.ID">
+                                            <div class="content">
+                                                <figure>
+                                                    <img src="~/@item.Src" alt="">
+                                                    <figcaption><i class="fa fa-external-link"></i></figcaption>
+                                                </figure>
+                                                <span>@item.Category</span>
+                                                <h5> @item.Title</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="l-sidebar">
+                    <div class="cat-sidebar report">
+                        <span class="title">اخبار فوری</span>
+                        <div class="text-left"><i class="fa fa-arrows-alt"></i></div>
+                        <ul>
+                            @foreach (var item in Model.InstantNews)
+                            {
+                                <li><a href="~/news/detail/@item.ID">@item.Title</a></li>
+
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="l-sidebar">
+                    <div class="cat-sidebar">
+                        <span class="title">دسته بندی مطالب</span>
+                        <div class="text-left"><i class="fa fa-folder-o"></i></div>
+                        <ul>
+                            @foreach (var item in Model.Categories)
+                            {
+                                <li><a href="~/category/getnewsbycategory/@item.ID">@item.Name</a><span>@item.NewsCount</span></li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+    <div class="latest-posts">
+        <div class="container-fluid">
+            <div class="blog-title-span">
+                <span class="title">آخرین مطالب</span>
+            </div>
+            @foreach (var item in Model.News.Take(8))
+            {
+                <div class="col-md-3">
+                    <div class="post-box">
+                        <a href="~/news/detail/@item.NewsID">
+                            <figure>
+                                <img src="~/@item.Src" alt="">
+                                <figcaption class="meta-fig">
+                                    <span><i class="fa fa-clock-o"></i>@item.CreateDate</span>&nbsp;
+                                    <span><i class="fa fa-comment-o"></i> 12</span>
+                                </figcaption>
+                                <figcaption class="view">
+
+                                    <span>@item.Category</span>
+
+                                </figcaption>
+                            </figure>
+                            <div class="text-p">
+                                <h5>@item.Title</h5>
+                                <p>
+                                  @item.ShortDescription
+                                </p>
+                                <div class="text-rigt">
+                                    <a href="~/news/detail/@item.NewsID">ادامه ...</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

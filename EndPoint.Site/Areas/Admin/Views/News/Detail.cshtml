@@ -1,0 +1,95 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyCms.Application.Services.News.Query.GetDetailNewsForAdmin.GetDetailNewsForAdminDto
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+<section class="basic-elements">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">فرم ثبت نام کاربر جدید</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">اطلاعات خبر جدید را وارد نمایید</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نام خبر</label>
+                                            <input type="text" class="form-control" id="Title" readonly value="@Model.Title">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">توضیح مختصر</label>
+                                            <textarea id="ShortDescription" cols="40" rows="3" readonly placeholder ="@Model.ShortDescription"></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">متن خبر</label>
+                                            <textarea id="ShortDescription" cols="40" rows="3" readonly placeholder="@Model.Text"></textarea>
+                                        </fieldset>
+                                    </div>
+                                    @*<div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نمایش داده شود؟ </label>
+                                            <input type="checkbox" class="form-control" id="Displayed">
+                                        </fieldset>
+                                    </div>*@
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">دسته بندی خبر</label>
+                                            <input type="text" class="form-control" id="Cat" value="@Model.CatName" readonly>
+                                        </fieldset>
+                                    </div>
+                                    @*<div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+            <fieldset class="form-group">
+                <label for="basicSelect">دسته بندی</label>
+                <select class="form-control" asp-items="@ViewBag.categories" id="CatID">
+                </select>
+                <p><small class="text-muted">دسته بندی خبر را انتخاب کنید</small></p>
+
+            </fieldset>
+        </div>*@
+
+                                    @*<div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+            <fieldset class="form-group">
+                <label for="basicInput">تصاویر </label>
+                <input type="file" multiple class="form-control" accept="image/*" id="Images">
+            </fieldset>
+        </div>*@
+
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <br />
+                                            <a id="btnAddNews" href="~/Admin/news/" class="btn btn-danger col-md-12">برگشت</a>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,328 @@
+﻿@model List<MyCms.Application.Services.News.Query.GetNews.GetNewsDto>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title-wrap bar-success">
+                                <form >
+                                    <div class="col-md-6">
+                                        <div class="search-btn">
+                                            <span><i class="fa fa-search"></i></span>
+                                            <input type="search" name="SearchKey" />
+                                            <input type="submit" value="جستجو" href="~/Admin/news/index?searchKey=@Context.Request.Query["SearchKey"]" />
+                                        </div>
+                                    </div>
+                                </form>
+                                <h4 class="card-title">لیست دسته بندی ها</h4>
+                            </div>
+                        </div>
+                        <div class="card-body collapse show">
+                            <div class="card-block card-dashboard">
+                                <p class="card-text">لیست خبر ها</p>
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                                    <div class="col-sm-12">
+                                        <table class="table table-striped table-bordered zero-configuration dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="دسته بندی: activate to sort column descending" style="width: 222px;">کد خبر</th>
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="دسته بندی: activate to sort column descending" style="width: 222px;">نام خبر</th>
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="دسته بندی: activate to sort column descending" style="width: 222px;">دسته بندی خبر</th>
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label=": activate to sort column descending" style="width: 222px;"></th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr role="row" class="odd">
+                                                        <td class="sorting_1">@item.ID</td>
+                                                        <td>@item.Title</td>
+                                                        <td>@item.CatName</td>
+
+                                                        <td>
+
+                                                            <button onclick="DeleteNews('@item.ID')" class="btn btn-dark">حذف خبر</button>
+                                                            <a href="~/Admin/news/edit/@item.ID" class="btn btn-blue">ویرایش خبر</a>
+                                                            <a href="~/Admin/News/Detail/@item.ID" class="btn btn-deep-purple">جزیییات خبر</a>
+                                                            @if (item.DisPlayed)
+                                                            {
+                                                                <button onclick="NewsSatusChange('@item.ID')" class="btn btn-green">خبر در سایت نشان داده می شود</button>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <button onclick="NewsSatusChange('@item.ID')" class="btn btn-orange">خبر در سایت نشان داده نمی شود</button>
+                                                            }
+                                                            @if (item.IsSlider && item.DisPlayed)
+                                                            {
+                                                                <button onclick="ShowInSlider('@item.ID')" class="btn btn-reddit">خبر در اسلایدر نشان داده می شود</button>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <button onclick="ShowInSlider('@item.ID')" class="btn btn-red">خبر در اسلایدر نشان داده نمی شود</button>
+                                                            }
+                                                            @if (item.IsInNews && item.DisPlayed)
+                                                            {
+                                                                <button onclick="ShowInNews('@item.ID')" class="btn btn-cyan">خبر در اخبار فوری نشان داده می شود</button>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <button onclick="ShowInNews('@item.ID')" class="btn btn-brown">خبر در اخبار فوری نشان داده نمی شود</button>
+                                                            }
+
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<link href="~/SweetAlert/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/SweetAlert/sweetalert2.min.js"></script>
+@section Script
+{
+
+    <script>
+        function NewsSatusChange(NewsID) {
+            swal.fire({
+                title: 'تغییر وضعیت خبر',
+                text: "کاربر گرامی از تغییر وضعیت خبر مطمئن هستید؟",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#7cacbe',
+                confirmButtonText: 'بله ، تغییر وضعیت انجام شود',
+                cancelButtonText: 'خیر'
+            }).then((result) => {
+                if (result.value) {
+
+                    var postData = {
+                        'NewsID': NewsID,
+                    };
+
+                    $.ajax({
+                        contentType: 'application/x-www-form-urlencoded',
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/admin/news/ChangeNewsStatus",
+                        data: postData,
+                        success: function (data) {
+                            if (data.isSuccess == true) {
+                                swal.fire(
+                                    'موفق!',
+                                    data.message,
+                                    'success'
+                                ).then(function (isConfirm) {
+                                    location.reload();
+                                });
+                            }
+                            else {
+
+                                swal.fire(
+                                    'هشدار!',
+                                    data.message,
+                                    'warning'
+                                );
+
+                            }
+                        },
+                        error: function (request, status, error) {
+                            alert(request.responseText);
+                        }
+
+                    });
+
+                }
+            })
+        }
+
+
+
+
+        function ShowInNews(NewsID) {
+            swal.fire({
+                title: 'تغییر وضعیت خبر',
+                text: "کاربر گرامی از تغییر وضعیت خبر مطمئن هستید؟",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#7cacbe',
+                confirmButtonText: 'بله ، تغییر وضعیت انجام شود',
+                cancelButtonText: 'خیر'
+            }).then((result) => {
+                if (result.value) {
+
+                    var postData = {
+                        'NewsID': NewsID,
+                    };
+
+                    $.ajax({
+                        contentType: 'application/x-www-form-urlencoded',
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/admin/news/ShowInNews",
+                        data: postData,
+                        success: function (data) {
+                            if (data.isSuccess == true) {
+                                swal.fire(
+                                    'موفق!',
+                                    data.message,
+                                    'success'
+                                ).then(function (isConfirm) {
+                                    location.reload();
+                                });
+                            }
+                            else {
+
+                                swal.fire(
+                                    'هشدار!',
+                                    data.message,
+                                    'warning'
+                                );
+
+                            }
+                        },
+                        error: function (request, status, error) {
+                            alert(request.responseText);
+                        }
+
+                    });
+
+                }
+            })
+        }
+
+
+
+
+
+        function ShowInSlider(NewsID) {
+            swal.fire({
+                title: 'تغییر وضعیت خبر',
+                text: "کاربر گرامی از تغییر وضعیت خبر مطمئن هستید؟",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#7cacbe',
+                confirmButtonText: 'بله ، تغییر وضعیت انجام شود',
+                cancelButtonText: 'خیر'
+            }).then((result) => {
+                if (result.value) {
+
+                    var postData = {
+                        'NewsID': NewsID,
+                    };
+
+                    $.ajax({
+                        contentType: 'application/x-www-form-urlencoded',
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/admin/news/ShowInSlider",
+                        data: postData,
+                        success: function (data) {
+                            if (data.isSuccess == true) {
+                                swal.fire(
+                                    'موفق!',
+                                    data.message,
+                                    'success'
+                                ).then(function (isConfirm) {
+                                    location.reload();
+                                });
+                            }
+                            else {
+
+                                swal.fire(
+                                    'هشدار!',
+                                    data.message,
+                                    'warning'
+                                );
+
+                            }
+                        },
+                        error: function (request, status, error) {
+                            alert(request.responseText);
+                        }
+
+                    });
+
+                }
+            })
+        }
+
+        function DeleteNews(UserId) {
+            swal.fire({
+                title: 'حذف خبر',
+                text: "کاربر گرامی از حذف خبر مطمئن هستید؟",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#7cacbe',
+                confirmButtonText: 'بله ، خبر حذف شود',
+                cancelButtonText: 'خیر'
+            }).then((result) => {
+                if (result.value) {
+                    var postData = {
+                        'newsID': UserId,
+                    };
+
+                    $.ajax({
+                        contentType: 'application/x-www-form-urlencoded',
+                        dataType: 'json',
+                        type: "POST",
+                        url: "/admin/News/Delete",
+                        data: postData,
+                        success: function (data) {
+                            if (data.isSuccess == true) {
+                                swal.fire(
+                                    'موفق!',
+                                    data.message,
+                                    'success'
+                                ).then(function (isConfirm) {
+                                    location.reload();
+                                });
+                            }
+                            else {
+
+                                swal.fire(
+                                    'هشدار!',
+                                    data.message,
+                                    'warning'
+                                );
+
+                            }
+                        },
+                        error: function (request, status, error) {
+                            alert(request.responseText);
+                        }
+
+                    });
+
+                }
+            })
+        }
+    </script>
+}
